@@ -2,6 +2,8 @@ from aiogram import Router, F
 import html
 from aiogram.filters import Command
 from database import get_drug_data
+from .split import split
+
 router = Router()
 
 @router.message(F.text, ~F.text.startswith("/"))
@@ -13,4 +15,9 @@ async def introduction_handler(message):
     intro = data[0]
     intro_edited = html.escape(intro).strip()
 
-    await message.answer(intro_edited, parse_mode ="HTML")
+
+    parts = await split(intro_edited)
+
+
+    for part in parts:
+        await message.answer(part, parse_mode="HTML")
