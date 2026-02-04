@@ -17,7 +17,7 @@ async def pedia_dosage_handler(message, command):
     dosage_text = data[0]
     dosage_text_edited = html.escape(dosage_text).strip()
     user = message.from_user
-    print(f"User {user.full_name} is requesting a split for {command.args}")
+    print(f"User {user.full_name} is requesting pediatric dosage for {command.args}")
 
     parts = await split(dosage_text_edited)
     # await message.answer(dosage_text_edited, parse_mode ="HTML")

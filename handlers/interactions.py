@@ -18,6 +18,7 @@ async def interactions_handler(message, command):
     interactions_text_edited = html.escape(interactions_text).strip()
     parts = await split(interactions_text_edited)
 
+    print(f"User {message.from_user.full_name} is requesting interactions for {interactions}.")
 
     for part in parts:
         await message.answer(part, parse_mode="HTML")

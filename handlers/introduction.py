@@ -17,6 +17,7 @@ async def introduction_handler(message):
 
 
     parts = await split(intro_edited)
+    print(f"User {message.from_user.full_name} is requesting introduction for {drug_name}.")
 
 
     for part in parts:

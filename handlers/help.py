@@ -19,5 +19,5 @@ async def help(message):
         "<b>🔹 Quick Search:</b>\n"
         "Simply type the drug name (e.g., <code>Paracetamol</code>) to get the clinical introduction."
     )
-    
+    print(f"User {message.from_user.full_name} is requesting help.")
     await message.answer(help_text, parse_mode="HTML")

@@ -14,5 +14,7 @@ async def start(message):
         "<i>Note: This is a reference tool. Consult a healthcare professional "
         "before making medical decisions.</i>"
     )
+
     
+    print(f"User Id:{message.from_user.id} Username:{message.from_user.username} Name:{message.from_user.full_name} is starting the bot.")
     await message.answer(start_text, parse_mode="HTML")

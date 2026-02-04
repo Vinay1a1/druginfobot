@@ -19,6 +19,6 @@ async def adult_dosage_handler(message, command):
 
     parts = await split(dosage_text_edited)
 
-
+    print(f"User {message.from_user.full_name} is requesting a dosage for {drug_name}")
     for part in parts:
         await message.answer(part, parse_mode="HTML")
