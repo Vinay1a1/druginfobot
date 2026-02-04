@@ -2,6 +2,7 @@ services:
   app:
     container_name: drug-info-bot
     build: .
+    user: "1000:1000"
     command: python main.py
     restart: on-failure
     env_file:
