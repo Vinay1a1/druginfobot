@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    command: python main.py
+    restart: on-failure
+    env_file:
+      - .env
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10mb"   # Prevents logs from eating VPS storage
+        max-file: "3"
