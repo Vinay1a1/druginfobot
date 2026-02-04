@@ -12,6 +12,8 @@ async def adult_dosage_handler(message, command):
         return await message.answer("Usage: /contraindications paracetamol.")
     drug_name = command.args.strip()
     data = await get_drug_data(drug_name ,"contraindications")
+    print(f"User {message.from_user.full_name} is requesting contraindications for {drug_name}")
+
     if not data:
         return await message.answer("Drug not found")
     dosage_text = data[0]

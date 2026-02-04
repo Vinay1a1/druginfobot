@@ -12,6 +12,8 @@ async def adverse_effects_handler(message, command):
         return await message.answer("Usage: /dosage_adjustments paracetamol.")
     drug_name = command.args.strip()
     data = await get_drug_data(drug_name ,"dosage_adjustments")
+    print(f"User {message.from_user.full_name} is requesting a dosage adjustments for {drug_name}")
+
     if not data:
         return await message.answer("Drug not found")
     dosage_adjustments_text = data[0]

@@ -12,13 +12,13 @@ async def interactions_handler(message, command):
         return await message.answer("Usage: /interactions paracetamol.")
     interactions = command.args.strip()
     data = await get_drug_data(interactions ,"interactions")
+    print(f"User {message.from_user.full_name} is requesting interactions for {interactions}.")
     if not data:
         return await message.answer("Drug not found")
     interactions_text = data[0]
     interactions_text_edited = html.escape(interactions_text).strip()
     parts = await split(interactions_text_edited)
 
-    print(f"User {message.from_user.full_name} is requesting interactions for {interactions}.")
 
     for part in parts:
         await message.answer(part, parse_mode="HTML")

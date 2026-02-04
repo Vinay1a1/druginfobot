@@ -10,6 +10,8 @@ router = Router()
 async def introduction_handler(message):
     drug_name = message.text.strip()
     data = await get_drug_data(drug_name ,"introduction")
+    print(f"User {message.from_user.full_name} is requesting introduction for {drug_name}.")
+
     if not data:
         return await message.answer("Drug not found")
     intro = data[0]
@@ -17,8 +19,6 @@ async def introduction_handler(message):
 
 
     parts = await split(intro_edited)
-    print(f"User {message.from_user.full_name} is requesting introduction for {drug_name}.")
-
 
     for part in parts:
         await message.answer(part, parse_mode="HTML")
