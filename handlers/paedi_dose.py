@@ -12,7 +12,7 @@ async def pedia_dosage_handler(message, command):
         return await message.answer("Usage: /ped_dose paracetamol.")
     drug_name = command.args.strip()
     data = await get_drug_data(drug_name ,"pediatric_dosage")
-    print(f"User {message.from_user.full_name} is requesting pediatric dosage for {command.args}")
+    print(f"User {message.from_user.full_name} is requesting pediatric dosage for {drug_name}")
 
     if not data:
         return await message.answer("Drug not found")
