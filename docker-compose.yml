@@ -1,5 +1,6 @@
 services:
   app:
+    container_name: drug-info-bot
     build: .
     command: python main.py
     restart: on-failure
