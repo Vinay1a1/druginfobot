@@ -19,7 +19,7 @@ from handlers.monitoring_parameters import router as monitor_router
 from handlers.pregnancy_lactation import router as pregnancy_router
 from handlers.mode_of_action import router as moa_router
 from handlers.general_considerations import router as consider_router
-
+from handlers.interactions import router as interac_router
 
 
 load_dotenv()
