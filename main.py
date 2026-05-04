@@ -14,10 +14,14 @@ from handlers.help import router as help_router
 from handlers.contraindications import router as contra_router
 from handlers.dosage_adjustment import router as dosAdj_router
 from handlers.paedi_dose import router as ped_router
-from handlers.interactions import router as interac_router
+from handlers.adr import router as adr_router
+from handlers.monitoring_parameters import router as monitor_router
+from handlers.pregnancy_lactation import router as pregnancy_router
+from handlers.mode_of_action import router as moa_router
+from handlers.general_considerations import router as consider_router
 
 
-# Bot token can be obtained via https://t.me/BotFather
+
 load_dotenv()
 TOKEN = getenv("BOT_TOKEN")
 if not TOKEN:
@@ -34,7 +38,11 @@ dp.include_router(ped_router)
 dp.include_router(interac_router)
 dp.include_router(contra_router)
 dp.include_router(dosAdj_router)
-
+dp.include_router(adr_router)
+dp.include_router(monitor_router)
+dp.include_router(pregnancy_router)
+dp.include_router(moa_router)
+dp.include_router(consider_router)
 dp.include_router(intro_router)
 
 
