@@ -17,7 +17,7 @@ async def adult_dosage_handler(message, command):
     if not data:
         return await message.answer("Drug not found")
     dosage_text = data[0]
-    dosage_text_edited = html.escape(dosage_text).strip()
+    dosage_text_edited = html.escape(str(dosage_text)).strip()
 
     parts = await split(dosage_text_edited)
 

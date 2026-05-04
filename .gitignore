@@ -3,3 +3,8 @@ druginfo
 clean.py
 drugs.db
 .env
+prepare.py
+drugs2.db
+start.db
+idi_db-*
+idi_db
